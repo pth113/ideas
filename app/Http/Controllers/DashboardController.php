@@ -9,8 +9,6 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $idea = new Idea(['content' => 'test']);
-        $idea->save();
         return view('dashboard', [
             'ideas' => Idea::orderBy('created_at', 'DESC')->get()
         ]);
